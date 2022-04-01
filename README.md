@@ -43,10 +43,22 @@ and the week end days to separate home from work.
 
 ## Future Work
 
-- Consecutive event during the clustering part.
-- Instead of counting the occurrence of each point of interest, analyze the order
-of them: for instance, people are more likely doing the pattern HOME/WORK/HOME
-during the week whereas during week ends the number of point of interest can
-increase.
-- Use values of latitude and longitude to map point of interest to actual places (using an external API)
+- Usage of other features:
+    - time series: we did not use the motion of the users at all
+        - When they start to move from A to B ?
+        - How long did they stay at some place ?
+        - The clustering part groups events which did not necessarily happened at the same time. We should consider point spatially grouped but also temporally grouped
+        - Instead of counting the occurrence of each point of interest, analyze the order
+        of them: for instance, people are more likely doing the pattern HOME/WORK/HOME
+        during the week whereas during week ends the number of point of interest can
+        increase.
 
+
+    - `crc32`: home and work wifi spot should be constant and stable (giving also good horizontal precision)
+    - `speed`: the speed feature was not that used or analyze. Some negative values and some stats did not help that much to use it properly
+
+- Tweak and explore DBSCAN possibilities
+    - Take more time to find a proper haversine version with horizontal precision
+    - Finetune the value of `eps`
+
+- Use values of latitude and longitude to map point of interest to actual places (using an external API)
