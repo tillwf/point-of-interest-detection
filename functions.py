@@ -198,7 +198,6 @@ def plot_home_work(df):
     ax.scatter(
         x,
         y,
-        c="blue",
         alpha=0.1,
     )
     ax.scatter(
